@@ -8,11 +8,39 @@ body {
 }
 
 header {
-  background-color: #5dbf5d;
+  background-color: #1e8d1e;
   padding: 3rem;
 }
 header a {
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 2rem;
   text-decoration: none;
+}
+/* header img {
+  height: 5rem;
+  width: 5rem;
+  float: left;
+  padding: 1rem;
+} */
+
+main {
+  margin: 1rem;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product {
+  border: 1px black solid;
+  margin: 1rem;
+}
+.product img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.product-info {
+  padding: 1rem;
 }
