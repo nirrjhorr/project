@@ -6,7 +6,7 @@ const data = {
       category: 'Vegetables',
       image: '/images/p1.jpg', // 679px × 829px
       price: 25,
-      countInStock: 10,
+      countInStock: 30,
       brand: 'Organic',
       rating: 0.0,
       numReviews: 0,
@@ -18,7 +18,7 @@ const data = {
       category: 'Vegetables',
       image: '/images/p2.jpg',
       price: 25,
-      countInStock: 20,
+      countInStock: 0,
       brand: 'Inorganic',
       rating: 0.0,
       numReviews: 0,

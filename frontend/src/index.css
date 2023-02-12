@@ -51,6 +51,11 @@ main {
   border-radius: 15px;
   box-shadow: 3px 4px 20px rgb(0, 0, 0);
 }
+.img-large {
+  max-width: 100%;
+  max-height: 90%;
+  border-radius: 15px;
+}
 
 /* 
 .products {
@@ -76,4 +81,4 @@ main {
 
 .product-info p {
   text-decoration: none;
-} */
+} */ ;
