@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: '1',
       name: 'Potato',
       slug: 'potato',
       category: 'Vegetables',
@@ -13,6 +14,7 @@ const data = {
       description: 'farm fresh organic potato',
     },
     {
+      _id: '2',
       name: 'Cauliflower',
       slug: 'cauliflower',
       category: 'Vegetables',
@@ -25,6 +27,7 @@ const data = {
       description: 'farm fresh cauliflower',
     },
     {
+      _id: '3',
       name: 'Radish',
       slug: 'radish',
       category: 'Vegetables',
@@ -37,6 +40,7 @@ const data = {
       description: 'farm fresh radish',
     },
     {
+      _id: '4',
       name: 'Turnip',
       slug: 'turnip',
       category: 'Vegetables',
@@ -49,6 +53,7 @@ const data = {
       description: 'farm fresh organic turnip',
     },
     {
+      _id: '5',
       name: 'Tomato',
       slug: 'tomato',
       category: 'Vegetables',
@@ -61,6 +66,7 @@ const data = {
       description: 'farm fresh organic tomato',
     },
     {
+      _id: '6',
       name: 'Garlic',
       slug: 'garlic',
       category: 'Vegetables',
@@ -73,6 +79,7 @@ const data = {
       description: 'farm fresh garlic',
     },
     {
+      _id: '7',
       name: 'Onion',
       slug: 'onion',
       category: 'Vegetables',
@@ -85,6 +92,7 @@ const data = {
       description: 'farm fresh onion',
     },
     {
+      _id: '8',
       name: 'Cabbage',
       slug: 'cabbage',
       category: 'Vegetables',
@@ -97,6 +105,7 @@ const data = {
       description: 'farm fresh organic cabbage',
     },
     {
+      _id: '9',
       name: 'Chili',
       slug: 'chili',
       category: 'Vegetables',
@@ -109,6 +118,7 @@ const data = {
       description: 'farm fresh chili',
     },
     {
+      _id: '10',
       name: 'Brinjal',
       slug: 'brinjal',
       category: 'Vegetables',
