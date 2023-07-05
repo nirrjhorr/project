@@ -1,4 +1,20 @@
+import bcrypt from 'bcryptjs';
 const data = {
+  users: [
+    {
+      name: 'Nirjhor',
+      email: 'admin@agromart.com',
+      password: bcrypt.hashSync('12345678'),
+      isAdmin: true,
+    },
+    {
+      name: 'Hasan',
+      email: 'user@agromart.com',
+      password: bcrypt.hashSync('87654321'),
+      isAdmin: false,
+    },
+  ],
+
   products: [
     {
       //_id: '1',
