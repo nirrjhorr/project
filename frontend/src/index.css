@@ -115,3 +115,16 @@ main {
 .product-info p {
   text-decoration: none;
 } */
+
+/* Default style for the steps */
+.checkout-steps {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Comforta', sans-serif;
+}
+
+/* Style for active steps */
+.checkout-steps .active {
+  font-weight: normal;
+  color: orange;
+}
