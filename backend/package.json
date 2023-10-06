@@ -19,7 +19,7 @@
     "mongod": "^2.0.0",
     "mongodb": "^5.6.0",
     "mongoose": "^7.3.1",
-    "nodemon": "^1.14.9",
+    "nodemon": "^3.0.1",
     "serve-static": "^1.15.0"
   },
   "description": ""
