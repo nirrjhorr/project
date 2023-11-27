@@ -10,29 +10,29 @@ userRouter.post(
   '/signin',
   expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
-    if (User) {
-      if (bcrypt.compareSync(req.body.password, user.password)) {
-        res.send({
-          _id: User._id,
-          name: User.name,
-          email: User.email,
-          isAdmin: User.isAdmin,
-          token: generateToken(User),
-        });
-        return;
-      }
+    if (user && bcrypt.compareSync(req.body.password, user.password)) {
+      res.send({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+        token: generateToken(user),
+      });
+    } else {
+      res.status(401).send({ message: 'Invalid email or password' });
     }
-    res.status(401).send({ message: 'Invalid email or password' });
   })
 );
+
 userRouter.post(
   '/signup',
   expressAsyncHandler(async (req, res) => {
     const newUser = new User({
       name: req.body.name,
       email: req.body.email,
-      password: bcrypt.hashSync(req.body.password),
+      password: bcrypt.hashSync(req.body.password, 10), // Adjust salt rounds as needed
     });
+
     const user = await newUser.save();
     res.send({
       _id: user._id,
@@ -52,8 +52,9 @@ userRouter.put(
     if (user) {
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
+
       if (req.body.password) {
-        user.password = bcrypt.hashSync(req.body.password, 8);
+        user.password = bcrypt.hashSync(req.body.password, 10); // Adjust salt rounds as needed
       }
 
       const updatedUser = await user.save();
