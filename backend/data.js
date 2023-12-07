@@ -4,13 +4,13 @@ const data = {
     {
       name: 'Nirjhor',
       email: 'admin@agromart.com',
-      password: bcrypt.hashSync('12345678'),
+      password: bcrypt.hashSync('87654321'),
       isAdmin: true,
     },
     {
       name: 'Hasan',
       email: 'user@agromart.com',
-      password: bcrypt.hashSync('87654321'),
+      password: bcrypt.hashSync('12345678'),
       isAdmin: false,
     },
   ],
