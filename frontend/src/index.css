@@ -101,7 +101,7 @@ main {
   height: 100%;
   position: absolute;
   left: -300px;
-  background-color: #9fd96c;
+  background-image: linear-gradient(125deg, #8cc759, #38ef7d, transparent);
   transition: 0.5s;
 }
 /* Make the button transparent */
