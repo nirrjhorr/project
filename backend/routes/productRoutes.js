@@ -176,7 +176,6 @@ productRouter.get(
     res.send(categories);
   })
 );
-
 productRouter.get('/slug/:slug', async (req, res) => {
   const product = await Product.findOne({ slug: req.params.slug });
   if (product) {
