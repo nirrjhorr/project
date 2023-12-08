@@ -51,8 +51,17 @@ function ProductScreen() {
   }, [slug]);
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { cart } = state;
+  const { cart, userInfo } = state;
+
+  // Check if the user is an admin
+  const isAdmin = userInfo && userInfo.isAdmin;
+
   const addToCartHandler = async () => {
+    // Check if the user is an admin, and prevent adding to cart for admins
+    if (isAdmin) {
+      return;
+    }
+
     const existItem = cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
@@ -66,6 +75,7 @@ function ProductScreen() {
     });
     navigate('/cart');
   };
+
   return loading ? (
     <LoadingBox />
   ) : error ? (
@@ -124,7 +134,7 @@ function ProductScreen() {
                     </Col>
                   </Row>
                 </ListGroup.Item>
-                {product.countInStock > 0 && (
+                {product.countInStock > 0 && !isAdmin && (
                   <ListGroup.Item>
                     <div className="d-grid">
                       <Button onClick={addToCartHandler} variant="primary">

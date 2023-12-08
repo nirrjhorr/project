@@ -115,7 +115,8 @@ export default function DashboardScreen() {
               ></Chart>
             )}
           </div>
-          {/* <div className="my-3">
+
+          <div className="my-3">
             <h2>Categories</h2>
             {summary.productCategories.length === 0 ? (
               <MessageBox>No Category</MessageBox>
@@ -131,8 +132,7 @@ export default function DashboardScreen() {
                 ]}
               ></Chart>
             )}
-          </div> */}
-          {/* pie chart if we add other products other than vegetables */}
+          </div>
         </>
       )}
     </div>
