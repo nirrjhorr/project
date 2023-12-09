@@ -18,11 +18,14 @@ body {
 .site-container {
   min-height: 100vh;
 }
+div.card-title.h5 {
+  color: black;
+}
 main {
   flex: 1;
 }
 .rating span {
-  color: #43b3cf;
+  color: #44ce72;
 }
 .btn-primary,
 .btn-outline-primary {
@@ -33,7 +36,7 @@ main {
   text-transform: uppercase;
   letter-spacing: 2.5px;
   color: #000;
-  background-color: #f3c5c5;
+  background-color: #86caaf;
   border: none;
   border-radius: 25px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
