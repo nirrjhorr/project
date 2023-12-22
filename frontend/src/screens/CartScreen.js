@@ -38,12 +38,20 @@ export default function CartScreen() {
 
   // Function to update the cart item quantity
   const updateCartHandler = async (item, quantity) => {
-    // ... (existing logic)
+    const { data } = await axios.get(`/api/products/${item._id}`);
+    if (data.countInStock < quantity) {
+      window.alert('Sorry. Product is out of stock');
+      return;
+    }
+    ctxDispatch({
+      type: 'CART_ADD_ITEM',
+      payload: { ...item, quantity },
+    });
   };
 
   // Function to remove an item from the cart
   const removeItemHandler = (item) => {
-    // ... (existing logic)
+    ctxDispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
 
   // Function to handle the checkout process
@@ -81,7 +89,45 @@ export default function CartScreen() {
                 <ListGroup.Item key={item._id}>
                   {/* Display item details and provide actions */}
                   <Row className="align-items-center">
-                    {/* ... (existing code) */}
+                    <Col md={4}>
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="img-fluid rounded img-thumbnail"
+                      ></img>{' '}
+                      <Link to={`/product/BDT{item.slug}`}>{item.name}</Link>
+                    </Col>
+                    <Col md={3}>
+                      <Button
+                        onClick={() =>
+                          updateCartHandler(item, item.quantity - 1)
+                        }
+                        variant="light"
+                        disabled={item.quantity === 1}
+                      >
+                        {' '}
+                        <i className="fas fa-minus-circle"></i>
+                      </Button>{' '}
+                      <span>{item.quantity}</span>{' '}
+                      <Button
+                        variant="light"
+                        onClick={() =>
+                          updateCartHandler(item, item.quantity + 1)
+                        }
+                        disabled={item.quantity === item.countInStock}
+                      >
+                        <i className="fas fa-plus-circle"></i>
+                      </Button>
+                    </Col>
+                    <Col md={3}> BDT {item.price}</Col>
+                    <Col md={2}>
+                      <Button
+                        onClick={() => removeItemHandler(item)}
+                        variant="light"
+                      >
+                        <i className="fas fa-trash"></i>
+                      </Button>
+                    </Col>
                   </Row>
                 </ListGroup.Item>
               ))}

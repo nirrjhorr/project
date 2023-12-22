@@ -101,7 +101,7 @@ main {
 }
 .side-navbar {
   width: 250px;
-  height: 100%;
+  height: 200%;
   position: absolute;
   left: -300px;
   background-image: linear-gradient(125deg, #8cc759, #38ef7d, transparent);
